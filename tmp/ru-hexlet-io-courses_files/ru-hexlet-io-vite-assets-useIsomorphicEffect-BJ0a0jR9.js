@@ -1,0 +1,1 @@
+import{g as e}from"./_commonjsHelpers-D6-XlEtG.js";import{r as t}from"./index-f3ZQ7e7G.js";var r,a;function o(){if(a)return r;a=1;var n=function(){};return r=n,r}var i=o();const g=e(i),s=typeof global<"u"&&global.navigator&&global.navigator.product==="ReactNative",f=typeof document<"u",p=f||s?t.useLayoutEffect:t.useEffect;export{p as u,g as w};
