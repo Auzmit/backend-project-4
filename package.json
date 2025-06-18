@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/Auzmit/backend-project-4/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Auzmit/backend-project-4/actions)",
   "main": "page-loader.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
     "acorn": "^8.15.0",
     "acorn-jsx": "^5.3.2",
@@ -351,10 +357,5 @@
     "eslint-plugin-vitest": "^0.5.4",
     "nock": "^13.1.0",
     "vitest": "^3.2.4"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
