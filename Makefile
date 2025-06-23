@@ -2,18 +2,14 @@
 
 setup:
 	npm install
-	
-run: run-hexlet run-google
 
-run-hexlet:
-	./page-loader.js https://ru.hexlet.io/courses?q%5Bsearch_text%5D=asd -o ./tmp
-
-run-google:
-	./page-loader.js https://www.google.com -o ./tmp
+run:
+	page-loader --output /var/tmp https://ru.hexlet.io/courses
+# ./page-loader.js https://ru.hexlet.io/courses -o ./tmp
 
 # delete files which include content from 'make run'
 clean:
-	node -e "require('fs/promises').rm('./tmp', { recursive: true, force: true })"
+	rm -rf /var/tmp/ru-hexlet-io-courses.html /var/tmp/ru-hexlet-io-courses_files
 
 test:
 	npm test
