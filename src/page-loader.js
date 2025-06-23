@@ -1,9 +1,10 @@
 import * as cheerio from 'cheerio';
-import fsp from 'fs/promises';
-import path from 'path';
 import debug from 'debug';
+import fsp from 'fs/promises';
 import Listr from 'listr';
+import path from 'path';
 import _ from 'lodash';
+
 import loadResourse from './loadResourse.js';
 
 const log = debug('page-loader');
@@ -31,7 +32,7 @@ const srcAttrubuteName = {
   script: 'src',
 };
 
-// подготавливаем ассеты для url и соответственно, html
+// подготавливаем ассеты для url и, соответственно, html
 const prepareAssets = (pageUrl, filesDirName, html) => {
   const $ = cheerio.load(html, { decodeEntities: false });
   const assets = [];
@@ -55,15 +56,8 @@ const prepareAssets = (pageUrl, filesDirName, html) => {
   return { html: $.html(), assets };
 };
 
-/**
- * @function pageLoader
- * 1) Loads a html page from given url
- * 2) Loads all resourses from img, link, script tags, that have the same host as the page
- * 3) Modifies the corresponding src attributes so they refer to the loaded resources.
- * @param {string} url - url string of a page
- * @param {string} output - directory to load
- * @returns {Promise<string>} fulfills to the path to created file
- */
+// скачивает html и его ресурсы (картинки и тд)
+// и переназначает в скачанном html ссылки на локально загруженные ресурсы
 export default (url, output = process.cwd()) => {
   log(`Starting loading page from ${url} to ${output}`);
   const tasks = [];
